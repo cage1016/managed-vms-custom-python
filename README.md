@@ -1,6 +1,22 @@
 Managed vms custom runtime
 ==========================
 
+####Getting Started
+
+#####clone git repo
+```sh
+git clone https://github.com/cage1016/managed-vms-custom-python
+```
+
+#####run managed vm locally
+
+must sure you have installed `gcloud SDK` and update `preview` components
+
+```sh
+gcloud preview app run .
+```
+
+
 ####Developing code for custom runtimes
 
 [Building Custom Runtimes - Google App Engine — Google Cloud Platform](https://cloud.google.com/appengine/docs/managed-vms/custom-runtimes)
@@ -117,4 +133,3 @@ if __name__ == '__main__':
 
 - [Managed VMs - Google App Engine — Google Cloud Platform](https://cloud.google.com/appengine/docs/managed-vms/)
 - [Quick start (to use webapp2 outside of App Engine) — webapp2 v2.5.1 documentation](https://webapp-improved.appspot.com/tutorials/quickstart.nogae.html)
-
