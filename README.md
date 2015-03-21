@@ -11,7 +11,7 @@ the following demo is a simple go througth to show how to build a custom managed
 
 #####standard VM runtimes
 ######app.yaml
-```sh
+```yaml
 application: <your application id>
 module: <your module name>
 version: 1
@@ -26,7 +26,7 @@ vm: true
 When you use `gcloud` to run or deploy a managed VM application based on a standard runtime (in this case Python27), the SDK will create a minimal Dockerfile using the standard runtime as a base image. You'll find this `Dockerfile` in your project directory:
 
 ######Dockerfile
-```
+```dockerfile
 # Dockerfile extending the generic Python image with application files for a
 # single application.
 FROM google/appengine-python27
@@ -39,7 +39,7 @@ ADD . /app
 To create a custom VM runtime application, you have to modify `app.yaml` configuration file with following settings:
 
 ######app.yaml
-```sh
+```yaml
 runtime: custom
 vm: true
 ```
@@ -48,7 +48,7 @@ You can reuse `Dockerfile` that SDK created for you or create your new one. Here
 
 
 ######Dockerfile
-```sh
+```dockerfile
 FROM google/python
 
 RUN apt-get update && apt-get install -y -q --no-install-recommends
@@ -66,7 +66,7 @@ ADD . /app
 ENTRYPOINT ["/env/bin/python", "/app/main.py"]
 ```
 ######requirements.txt
-```sh
+```text
 WebOb
 Paste
 webapp2
